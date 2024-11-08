@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID-19 - Pandemic Diseases</title>
+    <link rel="stylesheet" href="ccc.css"> <!-- Link to your main CSS file -->
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <!-- Logo -->
+            <img src="images/logo.png" alt="Logo" class="logo"> <!-- Add your logo here -->
+            <span class="header-title">Masha Pandemic Info</span>
+            <!-- Navigation Menu -->
+            <nav class="navbar">
+                <div class="navbar-brand">Pandemic Diseases</div>
+                <ul class="navbar-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aids.html">HIV/AIDS</a></li>
+                    <li><a href="marbu.html">Marburg</a></li>
+                    <li>
+                        <a href="#.html">Others</a> <!-- Link to the new page -->
+                        <ul class="dropdown-menu">
+                            <li><a href="ebola.html">Ebola</a></li>
+                            <li><a href="spanishflur.html">Spanish Flu</a></li>
+                            <li><a href="The plague.html">Plague</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- COVID-19 Information Section -->
+        <section id="covid19" class="disease-section">
+            <div class="disease-image">
+                
+                <img src="images/cov.jpg" alt="COVID-19 Virus Image" class="responsive-img">
+             
+                
+            </div>
+            <div class="disease-info">
+                <h2>COVID-19</h2>
+                <p><strong>Coronavirus disease 2019 (COVID-19)</strong> is a contagious disease caused by SARS-CoV-2. The first case was identified in Wuhan, China, in December 2019, quickly spreading globally and resulting in a pandemic.</p>
+            </div>
+        </section>
+
+        <!-- COVID-19 Statistics Section -->
+        <section id="covid19-stats" class="disease-section">
+            <p><h2>HISTORY OF COVID-19</h2>
+                Since March 2020, the world has reeled from the Covid-19 pandemic caused by the SARS-CoV-2 virus. According to Johns Hopkins University & Medicine, there have been 177 million known cases and 3.8 million deaths worldwide.
+
+                Covid-19 touches much more than just the medical world. It and responses to it have devastated economies around the world. But it also raised issues of free inquiry, truth, and trust. Have people in positions of power lied to us? Have they put us at undue risk?
+                
+                Did the coronavirus come from nature or from a lab experiment? The answer to that question suggests the best responses for individuals and governments to take to prevent a recurrence. If we are to have any hope of successfully preventing massive deaths and economic chaos in the future, we must understand the virus’s origin.
+                
+                Two Theories
+                The two primary theories of the origin of SARS-CoV-2 are natural transmission from animals to humans, also called zoonotic transmission, and manipulation in a virus laboratory, most likely the Wuhan Institute of Virology, or WIV. Both theories have merit; neither has been proven or disproven.
+                
+                With every “crime” scene, evidence can be found. Someone saw or heard something suspicious. There are notes, data, emails, footprints, fingerprints, and DNA evidence. A dog barked. Or a dog that should have barked didn’t.
+            </p>
+            <h2>Updated COVID-19 Global Statistics</h2>
+            <p><strong>Global Cases:</strong> <span id="global-cases">Loading...</span></p>
+            <p><strong>Global Deaths:</strong> <span id="global-deaths">Loading...</span></p>
+            <p><strong>Global Recovered:</strong> <span id="global-recovered">Loading...</span></p>
+            <p><strong>Vaccination Rate:</strong> <span id="vaccination-rate">Loading...</span></p>
+        </section>
+
+        <!-- Symptoms and Prevention Section -->
+        <section class="info-section">
+            <h2><strong>COVID-19 Symptoms and Prevention</strong></h2>
+            <div class="info-container">
+                <div class="info-item">
+                    <h3>Common Symptoms</h3>
+                    <ul>
+                        <li>Fever or chills</li>
+                        <li>Cough</li>
+                        <li>Shortness of breath</li>
+                        <li>Fatigue</li>
+                        <li>Loss of taste or smell</li>
+                    </ul>
+                </div>
+                <div class="info-item">
+                    <h3>Prevention Tips</h3>
+                    <ul>
+                        <li>Wear a mask in crowded places</li>
+                        <li>Wash hands frequently</li>
+                        <li>Maintain social distancing</li>
+                        <li>Get vaccinated</li>
+                        <li>Avoid touching your face</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <details>
+                <summary>How is COVID-19 transmitted?</summary>
+                <p>COVID-19 is primarily spread through respiratory droplets from coughs, sneezes, or talking.</p>
+            </details>
+            <details>
+                <summary>What is the best way to protect myself from COVID-19?</summary>
+                <p>Preventive measures include vaccination, mask-wearing, hand hygiene, and social distancing.</p>
+            </details>
+            <details>
+                <summary>Are there treatments for COVID-19?</summary>
+                <p>Various treatments, including antiviral medications, are available. Consult healthcare professionals for guidance.</p>
+            </details>
+        </section>
+    </main>
+
+    <marquee>
+        <h3 id="h3">Ms pand info</h3>
+        <h3 id="h3">STAY HOME</h3>
+        <h3 id="h3">STAY SAFE</h3>
+    </marquee>
+
+    <footer>
+        <p>&copy; 2024 Masha Pandemic Info</p>
+        <p>
+            <details>
+                <summary>Contact Us</summary>
+                <p>Email: info@mashapandemicinfo.com</p>
+                <p>Phone: 0798051645</p>
+            </details>
+        </p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" class="back-to-top">
+        ↑ Back to Top
+    </button>
+
+    <!-- COVID-19 Stats Script -->
+    <script>
+        // Function to fetch the latest COVID-19 statistics
+        async function fetchCovidStats() {
+            try {
+                const response = await fetch('https://api.covid19api.com/summary');
+                const data = await response.json();
+                
+                // Update the HTML with the fetched statistics
+                document.getElementById('global-cases').textContent = data.Global.TotalConfirmed.toLocaleString();
+                document.getElementById('global-deaths').textContent = data.Global.TotalDeaths.toLocaleString();
+                document.getElementById('global-recovered').textContent = data.Global.TotalRecovered.toLocaleString();
+                document.getElementById('vaccination-rate').textContent = 'Data unavailable'; // You can replace with a specific source if available
+            } catch (error) {
+                console.error('Error fetching COVID-19 statistics:', error);
+            }
+        }
+
+        // Fetch the statistics when the page loads
+        window.onload = fetchCovidStats;
+    </script>
+</body>
+</html>

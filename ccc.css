@@ -1,0 +1,466 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    background-color: #f0f4f7; /* Light background for better contrast */
+    font-family: Arial, sans-serif;
+    color: #333;
+    background: url(images/nnnnnnn.jpg);
+    background-size:cover;
+
+}
+
+/* Header Styling */
+header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    color: #ddd;
+    padding: 20px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 2em;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background: url(images/dominik-sostmann-8wgYWX2tXgk-unsplash.jpg);
+    background-size:cover;
+}
+
+
+/* Navbar Styling */
+.navbar {
+    background-color: #444;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 10px;
+    font-size: 15px;
+    top:0%;
+    background: url(images/back.jpg);
+    background-size:cover;
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+    font-weight: bold;
+    background-size:cover;
+    margin-left: 0px;
+}
+
+.navbar-menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    background: url(images/back.jpg);
+    background-size:cover;
+}
+
+.navbar-menu li {
+    display: inline;
+    background: url(images/back.jpg);
+    background-size:cover;
+}
+
+.navbar-menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+    background: url(images/back.jpg);
+    background-size:cover;
+}
+
+.navbar-menu a:hover {
+    background-color: #555;
+}
+
+/* Main Content Styling */
+main {
+    padding: 20px;
+    max-width: 900px;
+    margin: 20px auto;
+    background-color: #fff; /* White background for content */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+
+/* Content Section Styling */
+.content-section {
+    margin-bottom: 40px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+}
+
+.image-container {
+    text-align: center;
+    margin-bottom: 20px;
+    
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.details-container {
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: black;
+    margin-bottom: 10px;
+}
+
+/* Video Section Styling */
+.video-section {
+    margin-top: 20px;
+}
+
+.video-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+video {
+    max-width: 48%; /* Makes sure videos don't overflow the container */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    color: #ddd;
+    background-color: #333;
+    background: green;
+    background-size:cover;
+}
+
+/* Responsive Styles */
+
+/* Navbar and Header */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .navbar-brand {
+        font-size: 1.2em;
+    }
+}
+
+/* Main Content and General Text Adjustments */
+@media (max-width: 768px) {
+    main {
+        padding: 10px;
+        margin: 10px;
+        max-width: 100%;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    p {
+        font-size: 0.9em;
+    }
+
+    .navbar-menu a {
+        padding: 6px 10px;
+    }
+}
+
+/* Footer and Back to Top Button */
+@media (max-width: 768px) {
+    footer {
+        font-size: 0.8em;
+        padding: 15px;
+    }
+
+    .back-to-top {
+        font-size: 0.8em;
+        padding: 8px;
+    }
+}
+
+/* Adjustments for Very Small Screens (up to 480px) */
+@media (max-width: 480px) {
+    header {
+        font-size: 1.5em;
+        padding: 15px;
+    }
+
+    .navbar-brand {
+        font-size: 1em;
+    }
+
+    .navbar-menu {
+        gap: 5px;
+    }
+
+    .navbar-menu a {
+        font-size: 0.9em;
+        padding: 5px 8px;
+    }
+
+    main {
+        padding: 5px;
+        margin: 5px;
+    }
+
+    h2 {
+        font-size: 1.2em;
+    }
+
+    p {
+        font-size: 0.85em;
+    }
+
+    footer {
+        font-size: 0.7em;
+        padding: 10px;
+    }
+}
+@keyframes example {
+    0%   {background-color:red; left:0px; top:0px;}
+    25%  {background-color:yellow; left:200px; top:0px;}
+    50%  {background-color:blue; left:200px; top:200px;}
+    75%  {background-color:green; left:0px; top:200px;}
+    100% {background-color:red; left:0px; top:0px;}
+  }
+  
+  .login-icon {
+    font-size: 1.5em;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px;
+    margin-left: 15px;
+}
+
+/* Login Form Modal Styling */
+.login-form-modal {
+    display: none; /* Initially hidden */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: center;
+}
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #333;
+}
+
+/* Login Form Fields */
+.login-form-content form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    font-size: 1em;
+}
+
+.login-form-content form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.login-form-content form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    font-size: 1em;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-form-content form button:hover {
+    background-color: #555;
+}
+.logo {
+    max-height: 50px;
+    margin-right: 20px;
+    border-radius: 50px;
+    max-width: 100px;
+    animation: rotateLogo 3s ease-in-out infinite;
+}
+
+@keyframes rotateLogo {
+    0% { transform: rotate(0deg); }
+    50% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+}
+
+
+.login-form-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    text-align: center;
+}
+
+/* Apply bounce animation to H3 tag */
+#h3 {
+    animation: bounce 1.5s ease-in-out infinite;
+    color:black;
+    font-style: italic;
+}
+.navbar-menu li {
+    position: relative;
+}
+.navbar-menu li .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.navbar-menu li:hover .dropdown-menu {
+    display: block;
+}
+.dropdown-menu li {
+    width: 150px;
+}
+.dropdown-menu li a {
+    padding: 8px 16px;
+    display: block;
+    color:white;
+    text-decoration: none;
+}
+.dropdown-menu li a:hover {
+    background-color: #ddd;
+}
+.intro img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Marquee Styling */
+.responsive-marquee {
+    width: 100%;
+    overflow: hidden;
+    margin: 20px 0;
+}
+
+.responsive-marquee img {
+    width: 100%;
+    height: auto;
+    display: block;
+    animation: marquee-animation 15s linear infinite;
+}
+
+/* Keyframes for Marquee Animation */
+@keyframes marquee-animation {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+img:hover {
+    animation: zoom 0s;
+    animation-iteration-count:initial;
+    flex-flow: initial;
+  }
+  
+  @keyframes zoom {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+  }
+/* Team Section Styling */
+.team-section {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.team-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.team-member {
+    width: 250px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    text-align: center;
+}
+
+.team-photo {
+    width: 100%;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .team-member {
+        width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .team-member {
+        width: 100%;
+    }
+}
+
