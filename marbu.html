@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marburg Virus - Pandemic Diseases</title>
+    <link rel="stylesheet" href="ccc.css"> <!-- Link to main CSS file -->
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="header-content">
+            <img src="images/logo.png" alt="Masha Pandemic Info Logo" class="logo">
+            <span class="header-title">Masha Pandemic Info</span>
+            
+            <!-- Navigation Bar -->
+            <nav class="navbar">
+                <div class="navbar-brand">Pandemic Diseases</div>
+                <ul class="navbar-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aids.html">HIV/AIDS</a></li>
+                    <li><a href="covid.html">COVID-19</a></li>
+                    <li>
+                        <a href="#.html">Others</a> <!-- Link to the new page -->
+                        <ul class="dropdown-menu">
+                            <li><a href="ebola.html">Ebola</a></li>
+                            <li><a href="spanishflur.html">Spanish Flu</a></li>
+                            <li><a href="The plague.html">Plague</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                </ul>
+                 <!-- Login Icon -->
+                 <div class="login-icon" onclick="toggleLoginForm()">
+                    <i class="fas fa-user"></i> <!-- User icon -->
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Login/Sign Up Form Modal -->
+    <div id="loginForm" class="login-form-modal">
+        <div class="login-form-content">
+            <span class="close" onclick="toggleLoginForm()">&times;</span>
+            <h2 id="formTitle">Login</h2>
+            <form id="loginFormSection" onsubmit="return loginUser(event);">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+                <p id="loginMessage" style="color: red;"></p> <!-- Message for login feedback -->
+            </form>
+            <div id="switchToSignUp">
+                <p>Don't have an account? <a href="#" onclick="switchToSignUp()">Sign Up</a></p>
+            </div>
+
+            <form id="signUpFormSection" action="signup.php" method="POST" style="display:none;">
+                <h2 id="formTitle">Sign Up</h2>
+                <label for="newUsername">Username</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+
+                <label for="newEmail">Email</label>
+                <input type="email" id="newEmail" name="newEmail" required>
+
+                <label for="newPassword">Password</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+
+                <button type="submit">Sign Up</button>
+            </form>
+            <div id="switchToLogin" style="display:none;">
+                <p>Already have an account? <a href="#" onclick="switchToLogin()">Log In</a></p>
+            </div>
+        </div>
+    </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <!-- Marburg Virus Section -->
+        <section class="disease-section">
+            <div class="disease-image">
+                <img src="images/murb.jpg" alt="Marburg Virus Image" class="responsive-img">
+                        
+                  
+                
+            </div>
+            <div class="disease-info">
+                <h2>Marburg Virus Disease</h2>
+                <p>
+                    Marburg virus disease (MVD) is a severe and often fatal illness caused by the Marburg virus, a close relative of the Ebola virus. 
+                    It is highly infectious and primarily affects humans and non-human primates. The Marburg virus can spread through contact with 
+                    bodily fluids, contaminated surfaces, or objects.
+                </p>
+                <p>
+                    Initial outbreaks of Marburg occurred in Germany and Serbia in 1967, linked to laboratory exposure to infected monkeys. 
+                    Since then, several African countries have reported cases, often related to exposure to caves or mines inhabited by Rousettus bats, the natural host.
+                </p>
+            </div>
+        </section>
+
+        <!-- Symptoms and Transmission Section -->
+        <section class="content-section">
+            <h3>Symptoms and Transmission</h3>
+            <p>
+                Symptoms of Marburg virus disease typically appear between 2 to 21 days after exposure and include high fever, severe headache, 
+                muscle aches, vomiting, and diarrhea. Advanced symptoms can include bleeding from multiple areas, leading to shock, organ failure, 
+                and death in severe cases.
+            </p>
+            <p>
+                Marburg is transmitted through direct contact with blood, secretions, and other bodily fluids, as well as contaminated materials. 
+                Healthcare settings lacking appropriate protective equipment are particularly at risk of spreading the virus.
+            </p>
+            <details>
+                <summary>Prevention of Marburg Virus</summary>
+                <ul>
+                    <li>Avoiding exposure to fruit bats, which are natural reservoirs of the virus.</li>
+                    <li>Strict infection control in healthcare settings, including using personal protective equipment (PPE), isolating patients, and sterilizing medical tools to prevent transmission.</li>
+                    <li>Public health education on avoiding contact with infected individuals and safe burial practices.</li>
+                    <li>Active surveillance and early detection of cases to quickly contain outbreaks.</li>
+                    <li>Research on vaccines and treatments, with some experimental options showing promise.</li>
+                    <li>Supportive care for infected individuals, including hydration and symptom management.</li>
+                </ul>
+            </details>
+        </section>
+
+        <!-- Educational Videos Section -->
+        <section class="video-section">
+            <h3>Educational Videos on Marburg Virus</h3>
+            <div class="video-container">
+                <video controls>
+                    <source src="videos/murburg.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <video controls>
+                    <source src="videos/murburg2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+    </main>
+
+    <marquee>
+        <h3 id="h3">Ms pand info</h3>
+        <h3 id="h3">STAY HOME</h3>
+        <h3 id="h3">STAY SAFE</h3>
+    </marquee>
+    <footer>
+        <p>&copy; 2024 Masha Pandemic Info</p>
+        <details>
+            <summary>Contact Us</summary>
+            <p>Email: info@mashapandemicinfo.com</p>
+            <p>Phone: 0798051645</p>
+        </details>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" class="back-to-top">
+        ↑ Back to Top
+    </button>
+    <script>
+        
+        // Function to toggle the visibility of the login form
+        function toggleLoginForm() {
+            const loginForm = document.getElementById("loginForm");
+            loginForm.style.display = (loginForm.style.display === "block") ? "none" : "block";
+        }
+    
+        // Function to switch from Login to Sign Up form
+        function switchToSignUp() {
+            document.getElementById("loginFormSection").style.display = "none";
+            document.getElementById("signUpFormSection").style.display = "block";
+            document.getElementById("switchToSignUp").style.display = "none";
+            document.getElementById("switchToLogin").style.display = "block";
+            document.getElementById("formTitle").innerText = "Sign Up";
+        }
+    
+        // Function to switch from Sign Up to Login form
+        function switchToLogin() {
+            document.getElementById("loginFormSection").style.display = "block";
+            document.getElementById("signUpFormSection").style.display = "none";
+            document.getElementById("switchToSignUp").style.display = "block";
+            document.getElementById("switchToLogin").style.display = "none";
+            document.getElementById("formTitle").innerText = "Login";
+        }
+    
+        // Function to handle login form submission (example: prevent default submission and show message)
+        function loginUser(event) {
+            event.preventDefault(); // Prevent form submission
+            const username = document.getElementById("username").value;
+            const password = document.getElementById("password").value;
+            const loginMessage = document.getElementById("loginMessage");
+    
+            // Example login check (just for demonstration, you would replace this with actual logic)
+            if (username === "admin" && password === "admin") {
+                loginMessage.style.color = "green";
+                loginMessage.innerText = "Login successful!";
+            } else {
+                loginMessage.style.color = "red";
+                loginMessage.innerText = "Invalid username or password!";
+            }
+        }
+    
+        // Add event listener to close login form when clicking outside of it
+        window.addEventListener("click", function(event) {
+            const loginForm = document.getElementById("loginForm");
+            if (event.target === loginForm) {
+                toggleLoginForm();
+            }
+        });
+        </script>
+</body>
+
+</html>

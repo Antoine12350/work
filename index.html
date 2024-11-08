@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pandemic Diseases - Home</title>
+    <link rel="stylesheet" href="ccc.css"> <!-- Link to your main CSS file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- Font Awesome for icons -->
+    <style>
+        /* Dropdown styles */
+        .navbar-menu li {
+            position: relative;
+        }
+        .navbar-menu li .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: #f9f9f9;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+        .navbar-menu li:hover .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu li {
+            width: 150px;
+        }
+        .dropdown-menu li a {
+            padding: 8px 16px;
+            display: block;
+            color:white;
+            text-decoration: none;
+        }
+        .dropdown-menu li a:hover {
+            background-color: #ddd;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <!-- Logo -->
+            <img src="images/logo.png" alt="Logo" class="logo"> <!-- Add your logo here -->
+            <span class="header-title">Masha Pandemic Info</span>
+            <!-- Navigation Menu -->
+            <nav class="navbar">
+                <div class="navbar-brand">Pandemic Diseases</div>
+                <ul class="navbar-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aids.html">HIV/AIDS</a></li>
+                    <li><a href="marbu.html">Marburg</a></li>
+                    <li><a href="covid.html">COVID-19</a></li>
+                    <li>
+                        <a href="#.html">Others</a> <!-- Link to the new page -->
+                        <ul class="dropdown-menu">
+                            <li><a href="ebola.html">Ebola</a></li>
+                            <li><a href="spanishflur.html">Spanish Flu</a></li>
+                            <li><a href="The plague.html">Plague</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="aboutus.html">About Us</a></li>
+                </ul>
+                <!-- Login Icon -->
+                <div class="login-icon" onclick="toggleLoginForm()">
+                    <i class="fas fa-user"></i> <!-- User icon -->
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Login/Sign Up Form Modal -->
+    <div id="loginForm" class="login-form-modal">
+        <div class="login-form-content">
+            <span class="close" onclick="toggleLoginForm()">&times;</span>
+            <h2 id="formTitle">Login</h2>
+            <form id="loginFormSection" onsubmit="return loginUser(event);">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+
+                <button type="submit">Login</button>
+                <p id="loginMessage" style="color: red;"></p> <!-- Message for login feedback -->
+            </form>
+            <div id="switchToSignUp">
+                <p>Don't have an account? <a href="#" onclick="switchToSignUp()">Sign Up</a></p>
+            </div>
+
+            <form id="signUpFormSection" action="signup.php" method="POST" style="display:none;">
+                <h2 id="formTitle">Sign Up</h2>
+                <label for="newUsername">Username</label>
+                <input type="text" id="newUsername" name="newUsername" required>
+
+                <label for="newEmail">Email</label>
+                <input type="email" id="newEmail" name="newEmail" required>
+
+                <label for="newPassword">Password</label>
+                <input type="password" id="newPassword" name="newPassword" required>
+
+                <button type="submit">Sign Up</button>
+            </form>
+            <div id="switchToLogin" style="display:none;">
+                <p>Already have an account? <a href="#" onclick="switchToLogin()">Log In</a></p>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <section class="intro">
+            <h2>Welcome to the Pandemic Diseases Information Hub</h2>
+            <p>
+                This website is dedicated to providing comprehensive information on major pandemic diseases that have affected humanity throughout history. 
+                Here, you can learn about the causes, effects, and preventative measures for various pandemics, including COVID-19, Marburg, HIV/AIDS, and others.
+            </p>
+            <p>
+                Use the navigation menu to explore each section and find detailed information, including the latest research, historical context, and preventative tips.
+            </p>
+        </section>
+
+        <section class="disease-links">
+            <h2>Explore Diseases</h2>
+            <ul>
+                <li><a href="covid.html">COVID-19</a> - Learn about the global pandemic that started in 2019.</li>
+                <li><a href="aids.html">HIV/AIDS</a> - Learn about the ongoing battle against HIV and its effects.</li>
+                <li><a href="marbu.html">Marburg</a> - Discover information about the Marburg virus.</li>
+                <li><a href="others.html">Other Diseases</a> - Explore other notable pandemic diseases.</li> <!-- New item -->
+            </ul>
+        </section>
+    </main>
+    <marquee>
+        <h3 id="h3">Ms pand info</h3>
+        <h3 id="h3">STAY HOME</h3>
+        <h3 id="h3">STAY SAFE</h3>
+    </marquee>
+
+    <footer>
+        <p>&copy; 2024 Masha Pandemic Info</p>
+        <details>
+            <summary>Contact Us</summary>
+            <p>Email: info@mashapandemicinfo.com</p>
+            <p>Phone: +0798051645</p>
+        </details>
+        
+    </footer>
+    
+    <!-- Back to Top Button -->
+    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' });" class="back-to-top">
+        ↑ Back to Top
+    </button>
+
+    <script>
+        
+    // Function to toggle the visibility of the login form
+    function toggleLoginForm() {
+        const loginForm = document.getElementById("loginForm");
+        loginForm.style.display = (loginForm.style.display === "block") ? "none" : "block";
+    }
+
+    // Function to switch from Login to Sign Up form
+    function switchToSignUp() {
+        document.getElementById("loginFormSection").style.display = "none";
+        document.getElementById("signUpFormSection").style.display = "block";
+        document.getElementById("switchToSignUp").style.display = "none";
+        document.getElementById("switchToLogin").style.display = "block";
+        document.getElementById("formTitle").innerText = "Sign Up";
+    }
+
+    // Function to switch from Sign Up to Login form
+    function switchToLogin() {
+        document.getElementById("loginFormSection").style.display = "block";
+        document.getElementById("signUpFormSection").style.display = "none";
+        document.getElementById("switchToSignUp").style.display = "block";
+        document.getElementById("switchToLogin").style.display = "none";
+        document.getElementById("formTitle").innerText = "Login";
+    }
+
+    // Function to handle login form submission (example: prevent default submission and show message)
+    function loginUser(event) {
+        event.preventDefault(); // Prevent form submission
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+        const loginMessage = document.getElementById("loginMessage");
+
+        // Example login check (just for demonstration, you would replace this with actual logic)
+        if (username === "admin" && password === "admin") {
+            loginMessage.style.color = "green";
+            loginMessage.innerText = "Login successful!";
+        } else {
+            loginMessage.style.color = "red";
+            loginMessage.innerText = "Invalid username or password!";
+        }
+    }
+
+    // Add event listener to close login form when clicking outside of it
+    window.addEventListener("click", function(event) {
+        const loginForm = document.getElementById("loginForm");
+        if (event.target === loginForm) {
+            toggleLoginForm();
+        }
+    });
+    </script>
+</body>
+</html>

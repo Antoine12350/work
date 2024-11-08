@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Diseases - Masha Pandemic Info</title>
+    <link rel="stylesheet" href="ccc.css"> <!-- Link to your main CSS file -->
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <!-- Logo -->
+            <img src="images/logo.png" alt="Logo" class="logo"> <!-- Add your logo here -->
+            <span class="header-title">Masha Pandemic Info</span>
+            <!-- Navigation Menu -->
+            <nav class="navbar">
+                <div class="navbar-brand">Pandemic Diseases</div>
+                <ul class="navbar-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="aids.html">HIV/AIDS</a></li>
+                    <li><a href="marbu.html">Marburg</a></li>
+                    <li><a href="covid.html">COVID-19</a></li>
+                    <li><a href="others.html">Others</a></li> <!-- Link to the Others page -->
+                    <li><a href="aboutus.html">About Us</a></li>
+                </ul>
+                <!-- Login Icon -->
+                <div class="login-icon" onclick="toggleLoginForm()">
+                    <i class="fas fa-user"></i> <!-- User icon -->
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>Other Notable Diseases</h2>
+            <p>
+                Here, we provide information about other significant pandemic diseases. These include diseases like Ebola, Zika, and more. You can select a disease from the dropdown to learn more about it.
+            </p>
+
+            <!-- Dropdown to select a disease -->
+            <label for="diseaseDropdown">Select a disease to learn more:</label>
+            <select id="diseaseDropdown" onchange="displayDiseaseInfo(this)">
+                <option value="default">--Choose a Disease--</option>
+                <option value="ebola">Ebola</option>
+                <option value="zika">Zika Virus</option>
+                <option value="chikungunya">Chikungunya</option>
+            </select>
+
+            <div id="diseaseInfo" class="disease-info">
+                <!-- Content will be displayed here based on the selection -->
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Masha Pandemic Info</p>
+        <details>
+            <summary>Contact Us</summary>
+            <p>Email: info@mashapandemicinfo.com</p>
+            <p>Phone: +0798051645</p>
+        </details>
+    </footer>
+
+    <script>
+        function displayDiseaseInfo(dropdown) {
+            const diseaseInfo = document.getElementById("diseaseInfo");
+            const selectedValue = dropdown.value;
+
+            // Clear previous content
+            diseaseInfo.innerHTML = "";
+
+            // Display information based on selected disease
+            if (selectedValue === "ebola") {
+                diseaseInfo.innerHTML = "<h3>Ebola</h3><p>Ebola virus disease is a severe illness that can lead to death. It is caused by the Ebola virus, which is spread through direct contact with bodily fluids of infected persons or animals.</p>";
+            } else if (selectedValue === "zika") {
+                diseaseInfo.innerHTML = "<h3>Zika Virus</h3><p>Zika virus is transmitted primarily by Aedes mosquitoes. It is known to cause birth defects if contracted by pregnant women.</p>";
+            } else if (selectedValue === "chikungunya") {
+                diseaseInfo.innerHTML = "<h3>Chikungunya</h3><p>Chikungunya is a viral disease transmitted by mosquitoes. It causes fever, joint pain, and can lead to long-term joint pain in some cases.</p>";
+            } else {
+                diseaseInfo.innerHTML = "<p>Please select a disease from the dropdown above.</p>";
+            }
+        }
+    </script>
+</body>
+</html>
